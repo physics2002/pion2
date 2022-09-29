@@ -1,0 +1,31 @@
+/process/em/verbose 0
+#/process/had/verbose 1
+#
+/run/verbose 1
+/event/verbose 0 
+/tracking/verbose 0
+#
+#=======================  INITIALIZE ======================
+#
+/run/initialize
+#
+#=======================  LAYER ===========================
+#
+#--- "Beam pipe" : 2-mm-thick layer of Vacuum
+###/mydet/targetMaterial G4_Galactic
+###/mydet/targetInnerRadius  9.0 mm
+###/mydet/targetOuterRadius 11.0 mm
+#
+#--- "Silicon tracker" : 2-cm-thick layer of Silicon
+/mydet/targetMaterial G4_Galactic
+/mydet/targetInnerRadius  9.0 mm
+/mydet/targetOuterRadius 11.0 mm
+
+/mydet/setField  0.0 tesla
+
+/mydet/update
+
+/gun/particle pi-
+
+/run/beamOn 100000
+
